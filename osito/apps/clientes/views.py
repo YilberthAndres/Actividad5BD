@@ -44,5 +44,8 @@ def clientDelete(request, id_client):
 
     client = Cliente.objects.get(pk=id_client)
 
-    if request.method == 'GET':
-        form = ClienteForm(instance=client)
+    if request.method == 'POST':
+        client.delete()
+        return redirect('clientes:index')
+    return render(request, 'clientes/clienteEliminar.html', {'form': form})
+

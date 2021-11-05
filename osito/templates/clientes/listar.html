@@ -29,7 +29,7 @@
               <a class="btn btn-warning" href="{% url 'clientes:clientEdit' cliente.id %}">
                 <i class="fas fa-user-edit"></i>
               </a>
-              <a class="btn btn-danger btn-xs" href="#">
+              <a class="btn btn-danger btn-xs" href="{% url 'clientes:clientDelete' cliente.id %}">
                 <i class="fas fa-user-times"></i>
               </a>
             </td>
