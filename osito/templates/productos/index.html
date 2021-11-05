@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+{% block content%}
+    <center> <h3>Listados de Productos </h3></center>
+    <h1 class="pull-rigth" >
+      <a href="{% url 'productos:productoCreate' %}" class="btn btn-primary pull-right" style="margin-top: -10px; margin-bottom: 5px;" >Agregar</a>
+    </h1>
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Numero Existencia</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%if productos %}
+        {% for producto in productos %}
+                    <tr>
+                            <td>{{ producto.id }}</td>
+                            <td>{{ producto.descripcion }}</td>
+                            <td>{{ producto.precio }}</td>
+                            <td>{{ producto.numero_exit }}</td>
+                            <td>
+                                <a class="btn btn-warning" href="{% url 'productos:productoEdit' producto.id %}">
+                                  <i class="fas fa-edit"></i>
+                                </a>
+                                <a class="btn btn-danger btn-xs" href="{% url 'productos:productoEliminar' producto.id %}">
+                                  <i class="far fa-trash-alt"></i>
+                                </a>
+                            </td> 
+                    </tr>
+        {% endfor %}
+        {% else %}
+              <h3>No existe</h3>
+  {% endif %}
+  </tbody>
+  <tbody>
+   
+  </tbody>
+</table>
+{% endblock %}
