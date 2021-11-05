@@ -40,3 +40,9 @@ def clientEdit(request, id_client):
     return render(request, 'clientes/formCliente.html', {'form': form})
 
 
+def clientDelete(request, id_client):
+
+    client = Cliente.objects.get(pk=id_client)
+
+    if request.method == 'GET':
+        form = ClienteForm(instance=client)
