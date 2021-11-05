@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from apps.clientes.models import Cliente
+from apps.clientes.form import ClienteForm
 # Create your views here.
 
 def index(request):
@@ -15,11 +16,11 @@ def home(request):
 def clientCreate(request):
 
     if(request.method == 'POST'):
-        form = ClientForm(request.POST)
+        form = ClienteForm(request.POST)
         if form.is_valid():
             form.save()
 
         return redirect('clientes:index')
     else:
-        form = ClientForm()
+        form = ClienteForm()
         return render(request, 'clientes/formCliente.html', {'from': form})
