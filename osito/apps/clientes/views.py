@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from apps.clientes.models import Cliente
 # Create your views here.
 
@@ -10,3 +10,13 @@ def index(request):
 def home(request):
 
     return render(request, 'base/base.html')
+
+
+def clientCreate(request):
+
+    if(request.method == 'POST'):
+        form = ClientForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+        return redirect()
