@@ -19,4 +19,7 @@ def clientCreate(request):
         if form.is_valid():
             form.save()
 
-        return redirect()
+        return redirect('clientes:index')
+    else:
+        form = ClientForm()
+        return render(request, 'clientes/formCliente.html', {'from': form})
