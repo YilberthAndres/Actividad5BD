@@ -23,4 +23,4 @@ def clientCreate(request):
         return redirect('clientes:index')
     else:
         form = ClienteForm()
-        return render(request, 'clientes/formCliente.html', {'from': form})
+        return render(request, 'clientes/formCliente.html', {'form': form})

@@ -1,9 +1,9 @@
 from django.urls import path, include
-from apps.clientes.views import index
+from apps.clientes.views import index, clientCreate
 
-app_name = "ventas";
+app_name = "clientes";
 
 urlpatterns = [
-    path('', index),
-    path('nuevo/', clientCreate, name='clientecreate'),
+    path('', index,  name='index'),
+    path('nuevo/', clientCreate, name='clienteCreate'),
 ]
