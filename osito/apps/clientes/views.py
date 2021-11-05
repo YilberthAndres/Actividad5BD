@@ -47,5 +47,5 @@ def clientDelete(request, id_client):
     if request.method == 'POST':
         client.delete()
         return redirect('clientes:index')
-    return render(request, 'clientes/clienteEliminar.html', {'form': form})
+    return render(request, 'clientes/clienteEliminar.html', {'clientes': client})
 
