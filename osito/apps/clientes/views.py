@@ -14,7 +14,6 @@ def home(request):
 
 
 def clientCreate(request):
-
     if(request.method == 'POST'):
         form = ClienteForm(request.POST)
         if form.is_valid():
