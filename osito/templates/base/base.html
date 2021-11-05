@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Osito </title>
+   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+   <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container-fluid ">
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown" >
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html" style="background: #ADF0EA;">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cliente.html">Iniciar Sesion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"href="nuevo.html">Registrarse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Compras.html">Comprar</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="producto.html">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:8000/clientes/">Clientes</a>
+        </li>
+          <li class="nav-item">
+              <a class="nav-link" href="proveedor.html">Proveedores</a>
+          </li>
+        </ul>
+  </div> 
+</div>
+</nav>
+
+{% block content%}
+
+{% endblock %}
+
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+</body>
+
+
+
+</html>
