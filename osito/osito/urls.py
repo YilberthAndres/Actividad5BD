@@ -19,8 +19,9 @@ from apps.clientes.views import home
 from apps.productos.views import home
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
+    path('', home, name='home'),
     path('clientes/',  include('apps.clientes.urls',  namespace="clientes")),
     path('productos/', include('apps.productos.urls', namespace="productos")),
+    path('proveedores/', include('apps.proveedores.urls', namespace='proveedores')),
 
 ]
