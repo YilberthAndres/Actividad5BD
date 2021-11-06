@@ -1,0 +1,57 @@
+
+ {% extends 'base/base.html' %}
+
+ {% block content %}
+      <h2> Listado de Proveedores</h2>
+      <h1 class="pull-right">
+        <a href="{% url 'proveedores:proveedorCrear' %}" class="btn btn-primary pull-right" style="margin-top: -10px; margin-bottom: 5px">Agregar</a>
+      </h1>
+
+      <table class="table  table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Provincia</th>
+            <th scope="col">Telefono</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if proveedores %}
+              {% for proveedor in proveedores %}
+                 <tr>
+            
+                    <td>{{ proveedor.id}}</td>
+                    <td>{{ proveedor.nombre}}</td>
+                    <td>{{ proveedor.apellido}}</td>
+                    <td>{{ proveedor.direccion}}</td>
+                    <td>{{ proveedor.provincia}}</td>
+                    <td>{{ proveedor.telefono}}</td>
+                   <td>
+                    <a class="btn btn-warning" href="{% url 'proveedores:proveedorEditar' proveedor.id %}">  
+                     
+                      <i class="fas fa-pen-square"></i>
+                      </a>
+                     <a class="btn btn-danger" href="{% url 'proveedores:proveedorEliminar' proveedor.id %}">
+                      
+                      <i class="fas fa-trash-alt"></i>
+              
+
+                     </a>
+                      
+                   </td>
+                     
+                    
+                 </tr>
+
+                {% endfor %}
+            {% else %}  
+              <h3> Sin registros</h3>
+          {% endif %}
+          
+        </tbody>
+      </table>
+   {% endblock %}
+ 
