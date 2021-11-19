@@ -1,16 +1,11 @@
 from django.contrib import admin
-from apps.productos.models import Producto, Compras
+from apps.productos.models import Producto
 
-
-class MembershipInLine(admin.TabularInline):
-    '''TabularInline Inline View for '''
-
-    model = Compras
-    extra = 1
 
 class ProductoAdmin(admin.ModelAdmin):
-    inlines = (MembershipInLine, )
-
+    list_display  = ('descripcion','precio','numero_exit')
+    ordering      = ('descripcion','precio')
+    search_fields = ('descripcion','precio')
 
 
 admin.site.register(Producto, ProductoAdmin)

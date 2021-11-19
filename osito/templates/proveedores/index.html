@@ -16,6 +16,8 @@
             <th scope="col">Direccion</th>
             <th scope="col">Provincia</th>
             <th scope="col">Telefono</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
           </tr>
         </thead>
         <tbody>
@@ -29,6 +31,8 @@
                     <td>{{ proveedor.direccion}}</td>
                     <td>{{ proveedor.provincia}}</td>
                     <td>{{ proveedor.telefono}}</td>
+                    <td>{{ proveedor.producto}}</td>
+                    <td>{{ proveedor.cantidad}}</td>
                    <td>
                     <a class="btn btn-warning" href="{% url 'proveedores:proveedorEditar' proveedor.id %}">  
                      

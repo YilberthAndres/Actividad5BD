@@ -11,7 +11,9 @@ class ProveedorForm(forms.ModelForm):
           'apellido',
           'direccion',
           'provincia',
-          'telefono'
+          'telefono',
+          'producto',
+          'cantidad'
 
         ]
 
@@ -20,7 +22,9 @@ class ProveedorForm(forms.ModelForm):
             'apellido': 'Apellido',
             'direccion': 'Direccion',
             'provincia': 'Provincia',
-            'telefono': 'Telefono'
+            'telefono': 'Telefono',
+            'producto': 'Seleccione producto',
+            'cantidad': 'Cantidad'
         }
 
         widgets = {
@@ -29,6 +33,6 @@ class ProveedorForm(forms.ModelForm):
             'direccion': forms.TextInput(attrs={'class': 'form-control'}),
             'provincia': forms.TextInput(attrs={'class': 'form-control'}),
             'telefono': forms.TextInput(attrs={'class': 'form-control'}),
-           
-             
+            'producto': forms.Select(attrs={'class': 'form-control'}),
+            'cantidad': forms.TextInput(attrs={'class': 'form-control'}),
         }

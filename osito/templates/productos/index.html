@@ -11,6 +11,8 @@
       <th scope="col">Descripcion</th>
       <th scope="col">Precio</th>
       <th scope="col">Numero Existencia</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Fecha</th>
     </tr>
   </thead>
   <tbody>
@@ -21,6 +23,8 @@
                             <td>{{ producto.descripcion }}</td>
                             <td>{{ producto.precio }}</td>
                             <td>{{ producto.numero_exit }}</td>
+                            <td>{{ producto.cliente }}</td>
+                            <td>{{ producto.fecha }}</td>
                             <td>
                                 <a class="btn btn-warning" href="{% url 'productos:productoEdit' producto.id %}">
                                   <i class="fas fa-edit"></i>
